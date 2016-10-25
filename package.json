@@ -1,0 +1,17 @@
+{
+  "name": "string-class",
+  "version": "1.0.0",
+  "description": "Extending the \"String\" class in javascript with prototype oriented programming.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alade Kolawole Michael",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
