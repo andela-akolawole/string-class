@@ -4,23 +4,30 @@ describe('String class test', () => {
     
     describe('String.hasVowels test', () => {
 
+        it('should check if it is defined', () => {
+            let string = "";
+            expect(string.hasVowels).toBeDefined();
+        });
+
         it('should return true if the string contains vowels', () => {
-            let string = "vowels";
+            let string = "cwm";
             expect(string.hasVowels).toBeTruthy();
         });
 
         it('should return false if string does not contain vowels', () => {
-            let string = "gym";
-            expect(string.hasVowels).toBeFalsy();
-        });
-        it('should return error if string is number', () => {
-            let string = 1234;
-            expect(string.hasVowels).toBe('This is not a string.');
+            let string = "c";
+            console.log(string.hasVowels());
+            expect(string.hasVowels()).toBe(false);
         });
     });
 
     describe('String.toUpper test', () => {
        
+       it('should check if it is defined', () => {
+            let string = "";
+            expect(string.toUpper).toBeDefined();
+        });
+
        it('should return an uppercase string', () => {
             let string = "lowercase";
             expect(string.toUpper).toBe('LOWERCASE');
@@ -35,6 +42,7 @@ describe('String class test', () => {
     describe('Sting.toLower test', () => {
 
         it('should check if it is defined', () => {
+            let string = "";
             expect(string.toLower).toBeDefined();
         });
         
@@ -52,6 +60,7 @@ describe('String class test', () => {
     describe('String.ucFirst test', () => {
 
         it('should check if it is defined', () => {
+            let string = "";
             expect(string.ucFirst).toBeDefined();
         });
         
@@ -74,6 +83,7 @@ describe('String class test', () => {
     describe('String.isQuestion', () => {
 
         it('should check if it is defined', () => {
+            let string = "what is lower?";
             expect(string.isQuestion).toBeDefined();
         });
 
