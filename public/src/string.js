@@ -42,3 +42,17 @@ String.prototype.toLower = function () {
 };
 
 
+/**
+ * String.prototype.ucFirst
+ * 
+ * Turns the first letter of a string into an uppercase letter
+ * 
+ * @return 
+ */
+String.prototype.ucFirst = function () {
+  return this.replace(/^\S/, (match, pos) => {
+    	return match.toUpper();
+  });
+};
+
+
