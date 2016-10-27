@@ -6,12 +6,12 @@ describe('String class test', () => {
 
         it('should check if it is defined', () => {
             let string = "";
-            expect(string.hasVowels).toBeDefined();
+            expect(string.hasVowels()).toBeDefined();
         });
 
         it('should return true if the string contains vowels', () => {
-            let string = "cwm";
-            expect(string.hasVowels).toBeTruthy();
+            let string = "cwme";
+            expect(string.hasVowels()).toBeTruthy();
         });
 
         it('should return false if string does not contain vowels', () => {
@@ -25,7 +25,7 @@ describe('String class test', () => {
        
        it('should check if it is defined', () => {
             let string = "";
-            expect(string.toUpper).toBeDefined();
+            expect(string.toUpper()).toBeDefined();
         });
 
        it('should return an uppercase string', () => {
@@ -38,7 +38,7 @@ describe('String class test', () => {
 
         it('should check if it is defined', () => {
             let string = "";
-            expect(string.toLower).toBeDefined();
+            expect(string.toLower()).toBeDefined();
         });
         
         it('should return a lowercase string', () => {
@@ -51,7 +51,7 @@ describe('String class test', () => {
 
         it('should check if it is defined', () => {
             let string = "";
-            expect(string.ucFirst).toBeDefined();
+            expect(string.ucFirst()).toBeDefined();
         });
         
         it('should return a string with the first letter in uppercase', () => {
@@ -64,7 +64,7 @@ describe('String class test', () => {
 
         it('should check if it is defined', () => {
             let string = "what is lower?";
-            expect(string.isQuestion).toBeDefined();
+            expect(string.isQuestion()).toBeDefined();
         });
 
         it('should return true if string is a question', () => {
