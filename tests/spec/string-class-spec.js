@@ -30,13 +30,8 @@ describe('String class test', () => {
 
        it('should return an uppercase string', () => {
             let string = "lowercase";
-            expect(string.toUpper).toBe('LOWERCASE');
+            expect(string.toUpper()).toBe('LOWERCASE');
        });
-
-       it('should return an error if string is number', () => {
-           let string = 12333;
-           expect(string.toUpper).toBe('This is not a string.');
-       })
     });
 
     describe('Sting.toLower test', () => {
