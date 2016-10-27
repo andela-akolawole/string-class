@@ -9,8 +9,7 @@
  * @return 
  */
 String.prototype.hasVowels = function() {
-    var string = this;
-    return (/[aeiou]/ig).test(string);
+    return (/[aeiou]/ig).test(this);
 };
 
 
@@ -53,6 +52,17 @@ String.prototype.ucFirst = function () {
   return this.replace(/^\S/, (match, pos) => {
     	return match.toUpper();
   });
+};
+
+/**
+ * String.prototype.isQuestion
+ * 
+ * Check if a string is in a question format
+ * 
+ * @return 
+ */
+String.prototype.isQuestion = function () {
+  return (/[?]$/g).test(this);
 };
 
 
