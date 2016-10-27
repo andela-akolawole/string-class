@@ -58,16 +58,6 @@ describe('String class test', () => {
             let string = "jude";
             expect(string.ucFirst()).toBe('Jude');
         });
-
-        it('should return message if first letter in string is uppercase', () => {
-            let string = "Lamp";
-            expect(string.ucFirst()).toBe('This string already has its first letter in uppercase');
-        });
-
-        it('should return error if string is number', () => {
-            let string = 123243;
-            expect(string.ucFirst()).toBe('This not a string.');
-        });
     });
 
     describe('String.isQuestion', () => {
