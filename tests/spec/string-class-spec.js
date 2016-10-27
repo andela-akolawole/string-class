@@ -45,11 +45,6 @@ describe('String class test', () => {
             let string = "LOWERCASE";
             expect(string.toLower()).toBe('lowercase');
         });
-
-        it('should return an error if string is number', () => {
-            let string = 1232324;
-            expect(string.toLower()).toBe('This is not a string');
-        });
     });
 
     describe('String.ucFirst test', () => {
