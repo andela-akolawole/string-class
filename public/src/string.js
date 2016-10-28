@@ -21,8 +21,8 @@ String.prototype.hasVowels = function() {
  * @return 
  */
 String.prototype.toUpper = function () {
-  return this.replace(/[a-z]/g, (match, pos) => {
-    return String.fromCharCode(this.charCodeAt(pos) - 32);
+  return this.replace(/[a-z]/g, (match, position) => {
+    return String.fromCharCode(this.charCodeAt(position) - 32);
   });
 };
 
@@ -35,8 +35,8 @@ String.prototype.toUpper = function () {
  * @return 
  */
 String.prototype.toLower = function () {
-  return this.replace(/[A-Z]/g, (match, pos) => {
-    return String.fromCharCode(this.charCodeAt(pos) + 32);
+  return this.replace(/[A-Z]/g, (match, position) => {
+    return String.fromCharCode(this.charCodeAt(position) + 32);
   });
 };
 
@@ -49,7 +49,7 @@ String.prototype.toLower = function () {
  * @return 
  */
 String.prototype.ucFirst = function () {
-  return this.replace(/^\S/, (match, pos) => {
+  return this.replace(/^\S/, (match, position) => {
     	return match.toUpper();
   });
 };
@@ -65,4 +65,13 @@ String.prototype.isQuestion = function () {
   return (/[?]$/g).test(this);
 };
 
-
+/**
+ * String.prototype.words
+ * 
+ * Check if a string is in a question format
+ * 
+ * @return 
+ */
+String.prototype.words = function () {
+  return this.match(/\w+/g);
+};
