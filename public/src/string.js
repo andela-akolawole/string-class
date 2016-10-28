@@ -128,3 +128,22 @@ String.prototype.inverseCase = function () {
   });
 };
 
+/**
+ * String.prototype.alternatingCase
+ * 
+ * Returns the string in alternating cases
+ * 
+ * @return
+ */
+String.prototype.alternatingCase = function () {
+  var altString = '';
+  for (var i = 0; i < this.length; i += 1) {
+    if (i % 2 === 0) {
+      altString += this[i].toLower();
+    }else {
+      altString += this[i].toUpper();
+    }
+  }
+  return altString;
+};
+
