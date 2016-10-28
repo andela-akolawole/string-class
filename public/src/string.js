@@ -110,3 +110,21 @@ String.prototype.fromCurrency = function () {
   return Number(this.replace(/[,]/g, ''));
 };
 
+/**
+ * String.prototype.fromCurrency
+ * 
+ * Returns a number representation
+ * of the Currency String
+ * 
+ * @return
+ */
+String.prototype.inverseCase = function () {
+  return this.replace(/\w/g, (match) => {
+    if (/[A-Z]/g.test(match)) {
+      return match.toLower();
+    }else {
+      return match.toUpper();
+    }
+  });
+};
+
