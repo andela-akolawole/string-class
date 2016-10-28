@@ -68,10 +68,12 @@ String.prototype.isQuestion = function () {
 /**
  * String.prototype.words
  * 
- * Check if a string is in a question format
+ * Turns a string into an array of words
  * 
  * @return 
  */
 String.prototype.words = function () {
   return this.match(/\w+/g);
 };
+
+
