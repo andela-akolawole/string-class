@@ -87,4 +87,14 @@ String.prototype.wordCount = function () {
   return this.words().length;
 };
 
+/**
+ * String.prototype.toCurrency
+ * 
+ * Returns a currency representation of a string
+ * 
+ * @return
+ */
+String.prototype.toCurrency = function () {
+  return this.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+};
 
