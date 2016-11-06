@@ -236,3 +236,16 @@ String.prototype.numberWords = function () {
 String.prototype.isDigit = function () {
   return this.match(/\d/g).length == 1;
 }
+
+/**
+ * String.prototype.doubleCheck
+ * 
+ * Returns true if the string is 
+ * contains double characters
+ * 
+ * @return
+ */
+
+String.prototype.doubleCheck = function () {
+  return /(\S)\1/g.test(this);
+};
