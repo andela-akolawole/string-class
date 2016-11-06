@@ -176,3 +176,50 @@ String.prototype.getMiddle = function () {
   return midChar;
 };
 
+/**
+ * String.prototype.numberWords
+ * 
+ * Returns the number in words
+ * 
+ * @return
+ */
+
+String.prototype.numberWords = function () {
+  var words = '';
+  var strArr = this.split('');
+  for( var i=0; i < strArr.length;i++ ) {
+    switch(strArr[i]) {
+      case '1':
+        words += " one";
+        break;
+      case '2':
+        words += " two";
+        break;
+      case '3':
+        words += " three";
+        break;
+      case '4':
+        words += " four";
+        break;
+      case '5':
+        words += " five";
+        break;
+      case '6':
+        words += " six";
+        break;
+      case '7':
+        words += " seven";
+        break;
+      case '8':
+        words += " eight";
+        break;
+      case '9':
+        words += " nine";
+        break;
+      default:
+        words += " zero";
+    }
+  }
+  words = words.replace(/^\s/g, '');
+  return words;
+}
