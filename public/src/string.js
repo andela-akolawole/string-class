@@ -147,3 +147,32 @@ String.prototype.alternatingCase = function () {
   return altString;
 };
 
+/**
+ * String.prototype.getMiddle
+ * 
+ * Returns the string in alternating cases
+ * 
+ * @return
+ */
+String.prototype.getMiddle = function () {
+  var strLen = this.length,
+      isOdd = (strLen % 2) == 1,
+      strArr = this.split(''),
+      midChar,
+      half = Math.floor( strLen / 2 );
+
+  if (!isOdd) {
+    half = half - 1; 
+  }
+
+  //Splice from last index
+  strArr.splice(-half, half);
+  //Splice from the first index
+  strArr.splice(0, half);
+
+  //Turn array back to string
+  midChar = strArr.toString().replace(/[,]/g, '');
+
+  return midChar;
+};
+
