@@ -223,3 +223,16 @@ String.prototype.numberWords = function () {
   words = words.replace(/^\s/g, '');
   return words;
 }
+
+/**
+ * String.prototype.isDigit
+ * 
+ * Returns true if the string is 
+ * a digit(one number)
+ * 
+ * @return
+ */
+
+String.prototype.isDigit = function () {
+  return this.match(/\d/g).length == 1;
+}
