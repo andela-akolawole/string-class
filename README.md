@@ -6,6 +6,7 @@ Extending the "String" class in javascript with prototype oriented programming.
 ## Installation
    1. Clone or download the zip-file for this [repository](https://github.com/andela-akolawole/string-class.git)
 
+
 ## Usage
    Open your command line and run `npm install`
 
