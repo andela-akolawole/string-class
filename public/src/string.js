@@ -9,9 +9,8 @@
  * @return 
  */
 String.prototype.hasVowels = function() {
-    return (/[aeiou]/ig).test(this);
+    return (/[aeiou]/i).test(this);
 };
-
 
 /**
  * String.prototype.toUpper
@@ -26,7 +25,6 @@ String.prototype.toUpper = function () {
   });
 };
 
-
 /**
  * String.prototype.toLower
  * 
@@ -39,7 +37,6 @@ String.prototype.toLower = function () {
     return String.fromCharCode(this.charCodeAt(position) + 32);
   });
 };
-
 
 /**
  * String.prototype.ucFirst
@@ -122,9 +119,8 @@ String.prototype.inverseCase = function () {
   return this.replace(/\w/g, (match) => {
     if (/[A-Z]/g.test(match)) {
       return match.toLower();
-    }else {
-      return match.toUpper();
     }
+    return match.toUpper();
   });
 };
 
@@ -185,42 +181,24 @@ String.prototype.getMiddle = function () {
  */
 
 String.prototype.numberWords = function () {
-  var words = '';
-  var strArr = this.split('');
-  for( var i=0; i < strArr.length;i++ ) {
-    switch(strArr[i]) {
-      case '1':
-        words += " one";
-        break;
-      case '2':
-        words += " two";
-        break;
-      case '3':
-        words += " three";
-        break;
-      case '4':
-        words += " four";
-        break;
-      case '5':
-        words += " five";
-        break;
-      case '6':
-        words += " six";
-        break;
-      case '7':
-        words += " seven";
-        break;
-      case '8':
-        words += " eight";
-        break;
-      case '9':
-        words += " nine";
-        break;
-      default:
-        words += " zero";
-    }
-  }
-  words = words.replace(/^\s/g, '');
+	var dict = {
+		"0":" zero",
+		"1":" one", 
+		"2":" two", 
+		"3":" three",
+		"4":" four", 
+		"5":" five", 
+		"6":" six",
+		"7":" seven",
+		"8":" eight",
+		"9":" nine"
+	};
+	var words = '';
+	var strArr = this.split('');
+	strArr.map(function (index) {
+		words += dict[index];	
+	});
+	words = words.trim();
   return words;
 }
 
