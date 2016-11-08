@@ -1,0 +1,85 @@
+<html>
+    <head><title>String class</title></head>
+    <script src="string.js"></script>
+    <body>
+        <input type="text" id="inputString" placeholder="Type string"/>
+
+        <select name="selectFuntion" id="selectFuntion">
+            <option value="hasVowels">hasVowels</option>
+            <option value="toUpper">toUpper</option>
+            <option value="toLower">toLower</option>
+            <option value="ucFirst">ucFirst</option>
+            <option value="isQuestion">isQuestion</option>
+            <option value="words">words</option>
+            <option value="wordCount">wordCount</option>
+            <option value="toCurrency">toCurrency</option>
+            <option value="fromCurrency">fromCurrency</option>
+            <option value="inverseCase">inverseCase</option>
+            <option value="alternatingCase">alternatingCase</option>
+            <option value="getMiddle">getMiddle</option>
+            <option value="numberWords">numberWords</option>
+            <option value="isDigit">isDigit</option>
+            <option value="doubleCheck">doubleCheck</option>
+        </select><br/><br/>
+        <button onclick="runFunction()">Run</button>
+        <div><br/>
+            RESULT:<br/><p id="result"></p>
+        </div>
+
+        <script>
+            function runFunction() {
+                var inputString = document.getElementById("inputString").value;
+                var selectFuntion = document.getElementById("selectFuntion").value;
+                var result;
+                switch(selectFuntion) {
+                    case "hasVowels":
+                        result = inputString.hasVowels();
+                        break;
+                    case "toUpper":
+                        result = inputString.toUpper();
+                        break;
+                    case "toLower":
+                        result = inputString.toLower();
+                        break;
+                    case "ucFirst":
+                        result = inputString.ucFirst();
+                        break;
+                    case "isQuestion":
+                        result = inputString.isQuestion();
+                        break;
+                    case "words":
+                        result = inputString.words();
+                        break;
+                    case "wordCount":
+                        result = inputString.wordCount();
+                        break;
+                    case "toCurrency":
+                        result = inputString.toCurrency();
+                        break;
+                    case "inverseCase":
+                        result = inputString.inverseCase();
+                        break;
+                    case "alternatingCase":
+                        result = inputString.alternatingCase();
+                        break;
+                    case "getMiddle":
+                        result = inputString.getMiddle();
+                        break;
+                    case "numberWords":
+                        result = inputString.numberWords();
+                        break;
+                    case "isDigit":
+                        result = inputString.isDigit();
+                        break;
+                    case "doubleCheck":
+                        result = inputString.doubleCheck();
+                        break;
+                    default:
+                        result = "Choose a function";                    
+                };
+
+                return document.getElementById("result").innerHTML = result;
+            };
+        </script>
+    </body>
+</html>

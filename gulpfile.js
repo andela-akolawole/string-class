@@ -2,14 +2,14 @@ var gulp = require("gulp");
 var browserSync = require("browser-sync");
 var exec = require("child_process").exec;
 
-gulp.task("default", ["BrowserTest"]);
+gulp.task("default", ["BrowserTest", "serveApp"]);
 
 gulp.task('serveApp', function () {
     var f1 = browserSync.create();
 
     f1.init({
         server : {
-            baseDir: "./public"
+            baseDir: ["./public/src/", "./public"]
         },
         port : 3060,
         ui: {
