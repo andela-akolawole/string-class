@@ -15,7 +15,6 @@ describe('String class test', function () {
 
         it('should return false if string does not contain vowels', function () {
             var string = "c";
-            console.log(string.hasVowels());
             expect(string.hasVowels()).toBe(false);
         });
     });
