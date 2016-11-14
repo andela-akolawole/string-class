@@ -6,7 +6,7 @@
  * 
  * Checks a string for any vowels
  * 
- * @return 
+ * @return {boolen}
  */
 String.prototype.hasVowels = function() {
     return (/[aeiou]/i).test(this);
@@ -17,7 +17,7 @@ String.prototype.hasVowels = function() {
  * 
  * Turns a lowercase string into an uppercase strings
  * 
- * @return 
+ * @return {string}
  */
 String.prototype.toUpper = function () {
   return this.replace(/[a-z]/g, (match, position) => {
@@ -30,7 +30,7 @@ String.prototype.toUpper = function () {
  * 
  * Turns an uppercase string into a lowercase string
  * 
- * @return 
+ * @return {string}
  */
 String.prototype.toLower = function () {
   return this.replace(/[A-Z]/g, (match, position) => {
@@ -43,7 +43,7 @@ String.prototype.toLower = function () {
  * 
  * Turns the first letter of a string into an uppercase letter
  * 
- * @return 
+ * @return {string}
  */
 String.prototype.ucFirst = function () {
   return this.replace(/^\S/, (match, position) => {
@@ -56,7 +56,7 @@ String.prototype.ucFirst = function () {
  * 
  * Check if a string is in a question format
  * 
- * @return 
+ * @return {boolen}
  */
 String.prototype.isQuestion = function () {
   return (/[?]$/g).test(this);
@@ -67,7 +67,7 @@ String.prototype.isQuestion = function () {
  * 
  * Turns a string into an array of words
  * 
- * @return 
+ * @return {array}
  */
 String.prototype.words = function () {
   return this.match(/\w+/g);
@@ -78,7 +78,7 @@ String.prototype.words = function () {
  * 
  * This counts the number of words in a string
  * 
- * @return 
+ * @return {string}
  */
 String.prototype.wordCount = function () {
   return this.words().length;
@@ -89,7 +89,7 @@ String.prototype.wordCount = function () {
  * 
  * Returns a currency representation of a string
  * 
- * @return
+ * @return {string}
  */
 String.prototype.toCurrency = function () {
   return this.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
@@ -101,19 +101,19 @@ String.prototype.toCurrency = function () {
  * Returns a number representation
  * of the Currency String
  * 
- * @return
+ * @return {number}
  */
 String.prototype.fromCurrency = function () {
   return Number(this.replace(/[,]/g, ''));
 };
 
 /**
- * String.prototype.fromCurrency
+ * String.prototype.inverseCase
  * 
- * Returns a number representation
- * of the Currency String
+ * Returns each letter in the string
+ * as an inverse of its current case
  * 
- * @return
+ * @return {string}
  */
 String.prototype.inverseCase = function () {
   return this.replace(/\w/g, (match) => {
@@ -129,7 +129,7 @@ String.prototype.inverseCase = function () {
  * 
  * Returns the string in alternating cases
  * 
- * @return
+ * @return {string}
  */
 String.prototype.alternatingCase = function () {
   var altString = '';
@@ -146,9 +146,9 @@ String.prototype.alternatingCase = function () {
 /**
  * String.prototype.getMiddle
  * 
- * Returns the string in alternating cases
+ * Returns the middle of the string
  * 
- * @return
+ * @return {string}
  */
 String.prototype.getMiddle = function () {
   var strLen = this.length,
@@ -177,7 +177,7 @@ String.prototype.getMiddle = function () {
  * 
  * Returns the number in words
  * 
- * @return
+ * @return {string}
  */
 
 String.prototype.numberWords = function () {
@@ -208,7 +208,7 @@ String.prototype.numberWords = function () {
  * Returns true if the string is 
  * a digit(one number)
  * 
- * @return
+ * @return {boolen}
  */
 
 String.prototype.isDigit = function () {
@@ -221,7 +221,7 @@ String.prototype.isDigit = function () {
  * Returns true if the string is 
  * contains double characters
  * 
- * @return
+ * @return {boolen}
  */
 
 String.prototype.doubleCheck = function () {

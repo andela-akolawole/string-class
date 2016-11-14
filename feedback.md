@@ -1,0 +1,8 @@
+- No console logs
+- Install eslint then extend the airbnb linting guide
+- Line 56: Typo error
+- Line 214: Typo error
+- Get middle method test if the length of the string is odd.
+- @return param should specify the type.
+- Get back to Kes on what the "i" flag and the difference between "." and "+" notation is for RegEx.
+- Give the functionality for "?=" and "?!"
