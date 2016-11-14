@@ -169,7 +169,7 @@ describe('String class test', function () {
 
         it('should return the middle if the string is odd', function () {
             var string = "reads";
-            expect(string.getMiddle()).toBe('ea');
+            expect(string.getMiddle()).toBe('a');
         });
     });
 
