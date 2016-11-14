@@ -53,7 +53,7 @@ describe('String class test', function () {
             expect(string.ucFirst()).toBeDefined();
         });
         
-        it('should return a string with the first varter in uppercase', function () {
+        it('should return a string with the first character in uppercase', function () {
             var string = "jude";
             expect(string.ucFirst()).toBe('Jude');
         });
@@ -166,6 +166,11 @@ describe('String class test', function () {
             var string = "read";
             expect(string.getMiddle()).toBe('ea');
         });
+
+        it('should return the middle if the string is odd', function () {
+            var string = "reads";
+            expect(string.getMiddle()).toBe('ea');
+        });
     });
 
     describe('String.numberWords test', function () {
@@ -211,7 +216,7 @@ describe('String class test', function () {
             expect(string.doubleCheck()).toBeTruthy();
         });
 
-        it('should return false if does not contain double characters', function () {
+        it('should return false if the string does not contain double characters', function () {
             var string = "word";
             expect(string.doubleCheck()).toBeFalsy();
         });
