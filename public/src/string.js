@@ -6,7 +6,7 @@
  * 
  * Checks a string for any vowels
  * 
- * @return {boolen}
+ * @return {boolean}
  */
 String.prototype.hasVowels = function() {
     return (/[aeiou]/i).test(this);
@@ -208,7 +208,7 @@ String.prototype.numberWords = function () {
  * Returns true if the string is 
  * a digit(one number)
  * 
- * @return {boolen}
+ * @return {boolean}
  */
 
 String.prototype.isDigit = function () {
@@ -221,7 +221,7 @@ String.prototype.isDigit = function () {
  * Returns true if the string is 
  * contains double characters
  * 
- * @return {boolen}
+ * @return {boolean}
  */
 
 String.prototype.doubleCheck = function () {
