@@ -1,61 +1,62 @@
-'use strict'
+'use strict';
 
 
 /**
  * String.prototype.hasVowels
- * 
+ *
  * Checks a string for any vowels
- * 
+ *
  * @return {Boolean}
  */
-String.prototype.hasVowels = function() {
-    return (/[aeiou]/i).test(this);
+String.prototype.hasVowels = function () {
+  return (/[aeiou]/i).test(this);
 };
 
 /**
  * String.prototype.toUpper
- * 
+ *
  * Turns a lowercase string into an uppercase strings
- * 
+ *
  * @return {String}
  */
 String.prototype.toUpper = function () {
-  return this.replace(/[a-z]/g, function (match, position) {
+  return this.replace(/[a-z]/g, (match, position) => {
+    console.log(position);
     return String.fromCharCode(this.charCodeAt(position) - 32);
   });
 };
 
 /**
  * String.prototype.toLower
- * 
+ *
  * Turns an uppercase string into a lowercase string
- * 
+ *
  * @return {String}
  */
 String.prototype.toLower = function () {
-  return this.replace(/[A-Z]/g, function (match, position) {
+  return this.replace(/[A-Z]/g, (match, position) => {
     return String.fromCharCode(this.charCodeAt(position) + 32);
   });
 };
 
 /**
  * String.prototype.ucFirst
- * 
+ *
  * Turns the first letter of a string into an uppercase letter
- * 
+ *
  * @return {String}
  */
 String.prototype.ucFirst = function () {
-  return this.replace(/^\S/, function (match, position) {
-    	return match.toUpper();
+  return this.replace(/^\S/, function (match) {
+    return match.toUpper();
   });
 };
 
 /**
  * String.prototype.isQuestion
- * 
+ *
  * Check if a string is in a question format
- * 
+ *
  * @return {Boolen}
  */
 String.prototype.isQuestion = function () {
@@ -66,7 +67,7 @@ String.prototype.isQuestion = function () {
  * String.prototype.words
  * 
  * Turns a string into an array of words
- * 
+ *
  * @return {Array}
  */
 String.prototype.words = function () {
@@ -75,9 +76,9 @@ String.prototype.words = function () {
 
 /**
  * String.prototype.wordCount
- * 
+ *
  * This counts the number of words in a string
- * 
+ *
  * @return {String}
  */
 String.prototype.wordCount = function () {
@@ -86,9 +87,9 @@ String.prototype.wordCount = function () {
 
 /**
  * String.prototype.toCurrency
- * 
+ *
  * Returns a currency representation of a string
- * 
+ *
  * @return {String}
  */
 String.prototype.toCurrency = function () {
@@ -97,10 +98,10 @@ String.prototype.toCurrency = function () {
 
 /**
  * String.prototype.fromCurrency
- * 
+ *
  * Returns a number representation
  * of the Currency String
- * 
+ *
  * @return {Number}
  */
 String.prototype.fromCurrency = function () {
@@ -109,14 +110,14 @@ String.prototype.fromCurrency = function () {
 
 /**
  * String.prototype.inverseCase
- * 
+ *
  * Returns each letter in the string
  * as an inverse of its current case
- * 
+ *
  * @return {String}
  */
 String.prototype.inverseCase = function () {
-  return this.replace(/\w/g, function (match) {
+  return this.replace(/\w/g, (match) => {
     if (/[A-Z]/g.test(match)) {
       return match.toLower();
     }
@@ -126,17 +127,18 @@ String.prototype.inverseCase = function () {
 
 /**
  * String.prototype.alternatingCase
- * 
+ *
  * Returns the string in alternating cases
- * 
+ *
  * @return {String}
  */
 String.prototype.alternatingCase = function () {
   var altString = '';
-  for (var i = 0; i < this.length; i += 1) {
+  var i;
+  for (i = 0; i < this.length; i += 1) {
     if (i % 2 === 0) {
       altString += this[i].toLower();
-    }else {
+    } else {
       altString += this[i].toUpper();
     }
   }
@@ -145,28 +147,28 @@ String.prototype.alternatingCase = function () {
 
 /**
  * String.prototype.getMiddle
- * 
+ *
  * Returns the middle of the string
- * 
+ *
  * @return {String}
  */
 String.prototype.getMiddle = function () {
-  var strLen = this.length,
-      isOdd = (strLen % 2) == 1,
-      strArr = this.split(''),
-      midChar,
-      half = Math.floor( strLen / 2 );
+  var strLen = this.length;
+  var isOdd = (strLen % 2) === 1;
+  var strArr = this.split('');
+  var midChar;
+  var half = Math.floor(strLen / 2);
 
   if (!isOdd) {
-    half = half - 1; 
+    half -= 1;
   }
 
-  //Splice from last index
+  // Splice from last index
   strArr.splice(-half, half);
-  //Splice from the first index
+  // Splice from the first index
   strArr.splice(0, half);
 
-  //Turn array back to string
+  // Turn array back to string
   midChar = strArr.toString().replace(/[,]/g, '');
 
   return midChar;
@@ -174,53 +176,53 @@ String.prototype.getMiddle = function () {
 
 /**
  * String.prototype.numberWords
- * 
+ *
  * Returns the number in words
- * 
+ *
  * @return {String}
  */
 
 String.prototype.numberWords = function () {
 	var dict = {
-		"0":" zero",
-		"1":" one", 
-		"2":" two", 
-		"3":" three",
-		"4":" four", 
-		"5":" five", 
-		"6":" six",
-		"7":" seven",
-		"8":" eight",
-		"9":" nine"
-	};
-	var words = '';
-	var strArr = this.split('');
-	strArr.map(function (index) {
-		words += dict[index];	
-	});
-	words = words.trim();
+  '0': ' zero',
+	'1': ' one', 
+	'2': ' two', 
+	'3': ' three',
+	'4': ' four', 
+	'5': ' five', 
+	'6': ' six',
+	'7': ' seven',
+	'8': ' eight',
+	'9': ' nine'
+};
+  var words = '';
+  var strArr = this.split('');
+  strArr.map(function (index) {
+    words += dict[index];
+  });
+  words = words.trim();
   return words;
-}
+};
 
 /**
  * String.prototype.isDigit
- * 
- * Returns true if the string is 
+ *
+ * Returns true if the string is
  * a digit(one number)
- * 
+ *
  * @return {Boolean}
  */
 
 String.prototype.isDigit = function () {
-  return this.match(/\d/g).length == 1;
+  return this.match(/\d/g).length === 1;
 }
 
 /**
  * String.prototype.doubleCheck
- * 
- * Returns true if the string is 
+ *
+ * Returns true if the string is
  * contains double characters
- * 
+ *
  * @return {Boolean}
  */
 
