@@ -6,7 +6,7 @@
  * 
  * Checks a string for any vowels
  * 
- * @return {boolean}
+ * @return {Boolean}
  */
 String.prototype.hasVowels = function() {
     return (/[aeiou]/i).test(this);
@@ -17,10 +17,10 @@ String.prototype.hasVowels = function() {
  * 
  * Turns a lowercase string into an uppercase strings
  * 
- * @return {string}
+ * @return {String}
  */
 String.prototype.toUpper = function () {
-  return this.replace(/[a-z]/g, (match, position) => {
+  return this.replace(/[a-z]/g, function (match, position) {
     return String.fromCharCode(this.charCodeAt(position) - 32);
   });
 };
@@ -30,10 +30,10 @@ String.prototype.toUpper = function () {
  * 
  * Turns an uppercase string into a lowercase string
  * 
- * @return {string}
+ * @return {String}
  */
 String.prototype.toLower = function () {
-  return this.replace(/[A-Z]/g, (match, position) => {
+  return this.replace(/[A-Z]/g, function (match, position) {
     return String.fromCharCode(this.charCodeAt(position) + 32);
   });
 };
@@ -43,10 +43,10 @@ String.prototype.toLower = function () {
  * 
  * Turns the first letter of a string into an uppercase letter
  * 
- * @return {string}
+ * @return {String}
  */
 String.prototype.ucFirst = function () {
-  return this.replace(/^\S/, (match, position) => {
+  return this.replace(/^\S/, function (match, position) {
     	return match.toUpper();
   });
 };
@@ -56,7 +56,7 @@ String.prototype.ucFirst = function () {
  * 
  * Check if a string is in a question format
  * 
- * @return {boolen}
+ * @return {Boolen}
  */
 String.prototype.isQuestion = function () {
   return (/[?]$/g).test(this);
@@ -116,7 +116,7 @@ String.prototype.fromCurrency = function () {
  * @return {string}
  */
 String.prototype.inverseCase = function () {
-  return this.replace(/\w/g, (match) => {
+  return this.replace(/\w/g, function (match) {
     if (/[A-Z]/g.test(match)) {
       return match.toLower();
     }
