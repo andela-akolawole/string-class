@@ -21,7 +21,6 @@ String.prototype.hasVowels = function () {
  */
 String.prototype.toUpper = function () {
   return this.replace(/[a-z]/g, (match, position) => {
-    console.log(position);
     return String.fromCharCode(this.charCodeAt(position) - 32);
   });
 };
@@ -57,7 +56,7 @@ String.prototype.ucFirst = function () {
  *
  * Check if a string is in a question format
  *
- * @return {Boolen}
+ * @return {Boolean}
  */
 String.prototype.isQuestion = function () {
   return (/[?]$/g).test(this);
